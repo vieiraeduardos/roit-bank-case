@@ -34,8 +34,12 @@ requirements.txt
 Dockerfile
 ```
 
-\models\ConnectionFactory.py : Classe que encapsula a criação de instâncias de conexões com o MongoDB;
-\models\Images.py : Classe que gerencia a inserção e manipulação das informações entre a aplicação e a base de dados;
-main.py : Arquivo principal da aplicação com as rotas da API;
-requirements.txt: Arquivo com as dependências da aplicação;
-Dockerfile: Arquivo de configuração do Docker;
+```\models\ConnectionFactory.py``` : Classe que encapsula a criação de instâncias de conexões com o MongoDB;
+
+```\models\Images.py``` : Classe que gerencia a inserção e manipulação das informações entre a aplicação e a base de dados;
+
+```main.py``` : Arquivo principal da aplicação com as rotas da API;
+
+```requirements.txt``` : Arquivo com as dependências da aplicação;
+
+```Dockerfile``` : Arquivo de configuração do Docker;
