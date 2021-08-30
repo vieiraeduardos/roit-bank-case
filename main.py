@@ -52,7 +52,7 @@ async def process_image(file: UploadFile = File(...)):
 
     encoded_image = base64.b64encode(cleaned_image)
 
-    img = Images(file.filename, text, None)
+    img = Images(file.filename, text, encoded_image)
 
     image_id = img.insert()
 
