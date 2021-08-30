@@ -25,6 +25,15 @@ def clean_image(image):
     
     return denoise_2
 
+# Return text extracted from image
+def get_ocr_from_image(image):
+    pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract'
+
+    result = pytesseract.image_to_string(image, lang="eng")
+
+    return result
+
+
 @app.post("/images")
 async def process_image(file: UploadFile = File(...)):
     extension = file.filename.split(".")[-1] in ("jpg", "jpeg", "png")
@@ -36,10 +45,14 @@ async def process_image(file: UploadFile = File(...)):
 
     cleaned_image = clean_image(formatted_image)
 
+    text = get_ocr_from_image(cleaned_image)
+
+    encoded_image = base64.b64encode(cleaned_image)
+
     payload = {
         "filename": file.filename,
-        "text": "",
-        "data": "",
+        "text": text,
+        "data": encoded_image,
         "image_id": ""
     }
     
