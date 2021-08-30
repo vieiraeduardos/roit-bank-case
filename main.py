@@ -1,3 +1,6 @@
+# Import functions to database
+from models.Images import Images
+
 # Import funtions to process images
 import numpy as np
 import cv2
@@ -49,11 +52,15 @@ async def process_image(file: UploadFile = File(...)):
 
     encoded_image = base64.b64encode(cleaned_image)
 
+    img = Images(file.filename, text, None)
+
+    image_id = img.insert()
+
     payload = {
         "filename": file.filename,
         "text": text,
         "data": encoded_image,
-        "image_id": ""
+        "image_id": str(image_id)
     }
     
     return payload
