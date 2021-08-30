@@ -23,3 +23,19 @@ Gitflow e Commit Semântico.
 
 ## Dataset
 https://drive.google.com/file/d/1AnqFjRBOns6g3CaWi8nmDzEBdQLYyQ4N/view?usp=sharing
+
+## Arquitetura
+```
+/models
+    ConnectionFactory.py
+    Images.py
+main.py
+requirements.txt
+Dockerfile
+```
+
+\models\ConnectionFactory.py : Classe que encapsula a criação de instâncias de conexões com o MongoDB;
+\models\Images.py : Classe que gerencia a inserção e manipulação das informações entre a aplicação e a base de dados;
+main.py : Arquivo principal da aplicação com as rotas da API;
+requirements.txt: Arquivo com as dependências da aplicação;
+Dockerfile: Arquivo de configuração do Docker;
